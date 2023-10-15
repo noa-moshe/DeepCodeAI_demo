@@ -151,7 +151,8 @@ function startServer() {
 function getWebsocketConnection() {
   // This line makes the WebSocket connection always use port the CollabServer port.
   const host = window.location.host.replace('3000', '8080');
-  const webSocket = new WebSocket('ws://' + host);
+  const webSocket = new WebSocket('wss://' + host);
   const connection = new sharedb.Connection(webSocket);
   return connection;
 }
+
